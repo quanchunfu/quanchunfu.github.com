@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style:none;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            border-radius:50%;
+            background:orange;
+            box-shadow: 0 0 100px #ff0;
+            position:absolute;
+            top: 100px;
+            left:0;
+        }
+        .p{
+            height: 200px;
+            line-height: 200px;
+            font-size: 50px;
+            text-align: center;
+            margin: 100px auto;
+            font-weight: bold;
+            text-shadow: 0 0 10px #000;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox=document.querySelector('.box');
+            var oP=document.querySelector('.p');
+            document.onmousemove=function(ev){
+                oBox.style.left=ev.pageX-oBox.offsetWidth/2+'px';
+                oBox.style.top=ev.pageY-oBox.offsetHeight/2+'px';
+                var l=oP.offsetLeft+oP.offsetWidth/2-ev.pageX;
+                var t=oP.offsetTop+oP.offsetHeight/2-ev.pageY;
+                var dis=Math.sqrt(l*l+t*t);
+                oP.style.textShadow=  l/3+'px '+t/3+'px '+dis/10+'px #000';
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box"></div>
+<p class="p">会计核算东方航空斯蒂芬</p>
+</body>
+</html>
