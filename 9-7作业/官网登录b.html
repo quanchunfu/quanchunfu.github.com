@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html.body{
+            overflow: hidden;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #ededed;
+            border-radius: 10px;
+            text-align: center;
+            margin: 100px auto;
+            font-size: 30px;
+            -webkit-transform:scale(5,5);
+            display:none;
+            opacity:0;
+            -webkit-transition: 1s all ease;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBtn=document.getElementById('button');
+            var oBox=document.getElementById('box');
+            var oX=document.getElementById('ox');
+            oBtn.onclick=function(){
+                  oBox.style.webkitTransition='1s all ease';
+                  oBox.style.display='block';
+                  setTimeout(function(){
+                      oBox.style.opacity=1;
+                      oBox.style.webkitTransform='scale(1,1)'
+                  },0)
+            };
+            oX.onclick=function(){
+                oBox.style.opacity=0;
+                oBox.style.webkitTransform='scale(5,5)'
+                function tranEnd(){
+                    oBox.removeEventListener(transitionend,tranEnd,false);
+                    oBox.style.display='none';
+                }
+                oBox.addEventListener(transitionend,tranEnd,false);
+            }
+        }
+    </script>
+</head>
+<body>
+<a href="javascript:;" id="button">登录</a>
+<div id="box">
+    <input type="text"><input type="text"><input type="text">
+    <a href="javascript:;" id="ox">x</a>
+</div>
+</body>
+</html>

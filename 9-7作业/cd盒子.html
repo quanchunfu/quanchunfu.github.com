@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+*{margin:0; padding:0; list-style:none;}
+ul{width:1000px; margin:200px auto; height:200px;  }
+li{width:200px; height:200px; float:left; position:relative;  margin-left:10px;}
+li img{position:absolute; left:0; top:0; -webkit-transition:1s all ease;}
+li:hover .cd{
+    -webkit-transform:translate(0px,-35px) rotate(180deg);
+    -moz-transform:translate(0px,-35px) rotate(180deg);
+    -ms-transform:translate(0px,-35px) rotate(180deg);
+    -o-transform:translate(0px,-35px) rotate(180deg);
+    transform:translate(0px,-35px) rotate(180deg);
+}
+li:hover .jpg{
+    -webkit-transform:translate(0px,35px);
+    -moz-transform:translate(0px,35px);
+    -ms-transform:translate(0px,35px);
+    -o-transform:translate(0px,35px);
+    transform:translate(0px,35px);
+}
+</style>
+</head>
+<body style="background:url(img/bg.jpg) no-repeat; background-size:100%;">
+<ul>
+    <li>
+        <img class="cd" src="img/cd.png" height="200" width="200" alt="">
+        <img class="jpg" src="img/img_01.jpg" height="200" width="200" alt="">
+    </li>
+    <li>
+        <img class="cd" src="img/cd.png" height="200" width="200" alt="">
+        <img class="jpg" src="img/img_01.jpg" height="200" width="200" alt="">
+    </li>
+    <li>
+        <img class="cd" src="img/cd.png" height="200" width="200" alt="">
+        <img class="jpg" src="img/img_01.jpg" height="200" width="200" alt="">
+    </li>
+    <li>
+        <img class="cd" src="img/cd.png" height="200" width="200" alt="">
+        <img class="jpg" src="img/img_01.jpg" height="200" width="200" alt="">
+    </li>
+</ul>    
+</body>
+</html>

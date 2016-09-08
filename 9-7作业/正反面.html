@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .div{
+            width: 200px;
+            height: 200px;
+            margin:100px auto;
+            -webkit-transform-style:preserve-3d;
+            position:relative;
+            -webkit-transition:1s all ease;
+            -webkit-transform:perspective(800px) rotate(0deg);
+        }
+        .div .box{
+            width: 200px;
+            height: 200px;
+            background:red;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 200px;
+            font-size: 30px;
+            -webkit-transform:translateZ(1px);
+        }
+         .div .one{
+            width: 200px;
+            height: 200px;
+            background:blue;
+            position:absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 200px;
+            font-size: 30px;
+             -webkit-transform:translateZ(-1px) scale(-1,1);
+        }
+        .div:active{
+            -webkit-transform:perspective(800px) rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+<div class="div">
+    <div class="box">正面</div>
+    <div class="one">反面</div>
+</div>
+</body>
+</html>
