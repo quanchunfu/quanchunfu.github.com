@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 113px;
+            height: 400px;
+            border:1px solid #000000;
+            margin:100px auto;
+            position:relative;
+            overflow: hidden;
+        }
+        @keyframes name{
+            from{left:0}
+            to{left:-113px}
+        }
+        .box .count{
+            width: 400px;
+            height: 400px;
+            position:absolute;
+            background:-webkit-repeating-linear-gradient(-45deg,red 0,red 20px,#fff 20px,#fff 40px,blue 40px,blue 60px,#fff 60px,#fff 80px);
+            top:0;
+            left:0;
+            animation:name 1s linear infinite;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="count"></div>
+</div>
+</body>
+</html>

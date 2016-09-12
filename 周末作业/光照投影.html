@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0; padding:0;}
+        .sun{ width:100px; height:100px; background:#FC3;border-radius:50%; box-shadow:0 0 100px #FF0; position:absolute; top:0; left:0;}
+        .content{ height:200px; line-height:200px; font-size:60px; text-align:center; margin-top:200px; font-weight:bold; text-shadow:0 0 0 #000; }
+    </style>
+    <script>
+        window.onload=function(){
+            var oSun=document.querySelector('.sun');
+            var oCont=document.querySelector('.content');
+            document.onmousemove=function(ev){
+                oSun.style.left=ev.pageX-oSun.offsetWidth/2+'px';
+                oSun.style.top=ev.pageY-oSun.offsetTop/2+'px';
+                var l=oCont.offsetLeft+oCont.offsetWidth/2-ev.pageX;
+                var t=oCont.offsetTop+oCont.offsetTop/2-ev.pageY;
+                var dis=Math.sqrt(l*l+t*t);
+                oCont.style.textShadow=l/3+'px '+t/3+'px '+dis/10+'px #000'
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="sun"></div>
+<p class="content">好好学习，天天向上</p>
+</body>
+</html>
